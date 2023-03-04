@@ -70,6 +70,12 @@ public class EstadoResource {
         return repository.findByNome(nome);
     }
 
+    @GET
+    @Path("/searchList/{nome}")
+    public List<Estado> searchList(@PathParam("nome") String nome){
+        return repository.findByNomeList(nome);
+    }
+
     @DELETE
     @Path("/{nome}")
     @Transactional
