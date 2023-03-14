@@ -5,7 +5,6 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -66,23 +65,8 @@ public class EstadoResource {
 
     @GET
     @Path("/search/{nome}")
-    public Estado search(@PathParam("nome") String nome){
+    public List<Estado> search(@PathParam("nome") String nome){
         return repository.findByNome(nome);
-    }
-
-    @GET
-    @Path("/searchList/{nome}")
-    public List<Estado> searchList(@PathParam("nome") String nome){
-        return repository.findByNomeList(nome);
-    }
-
-    @DELETE
-    @Path("/{nome}")
-    @Transactional
-    public Estado deletar(@PathParam("nome") String nome) {
-        Estado objDell = repository.findByNome(nome);
-        repository.delete(objDell);
-        return objDell;
     }
 }
 
