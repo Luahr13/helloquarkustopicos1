@@ -43,6 +43,4 @@ public class MunicipioResponseDTO {
         this.estado = estado;
     }
 
-    
-    
 }

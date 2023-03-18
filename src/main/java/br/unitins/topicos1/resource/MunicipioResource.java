@@ -3,7 +3,9 @@ package br.unitins.topicos1.resource;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.validation.ConstraintViolationException;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -14,6 +16,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import br.unitins.topicos1.application.Result;
 import br.unitins.topicos1.dto.MunicipioDTO;
 import br.unitins.topicos1.dto.MunicipioResponseDTO;
 import br.unitins.topicos1.service.MunicipioService;
@@ -39,18 +42,29 @@ public class MunicipioResource {
 
     @POST
     public Response insert(MunicipioDTO dto) {
-        MunicipioResponseDTO municipio = municipioService.create(dto);
-        return Response.status(Status.CREATED).entity(municipio).build();
+        // Gera excessão
+        try {
+            MunicipioResponseDTO municipio = municipioService.create(dto);
+            return Response.status(Status.CREATED).entity(municipio).build();
+        } catch(ConstraintViolationException e) {
+            Result result = new Result(e.getConstraintViolations());
+            return Response.status(Status.NOT_FOUND).entity(result).build();
+        }
     }
 
     @PUT
     @Path("/{id}")
     public Response update(@PathParam("id") Long id, MunicipioDTO dto) {
-        MunicipioResponseDTO municipio = municipioService.update(id, dto);
-        return Response.ok(municipio).build();
+        try {
+            MunicipioResponseDTO municipio = municipioService.update(id, dto);
+            return Response.ok(municipio).build();
+        } catch(ConstraintViolationException e) {
+            Result result = new Result(e.getConstraintViolations());
+            return Response.status(Status.NOT_FOUND).entity(result).build();
+        }   
     }
 
-    @PUT
+    @DELETE
     @Path("/{id}")
     public Response delete(@PathParam("id") Long id) {
         municipioService.delete(id);
