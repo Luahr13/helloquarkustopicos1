@@ -5,7 +5,6 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.validation.ConstraintViolationException;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -15,6 +14,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
+
+import com.oracle.svm.core.annotate.Delete;
 
 import br.unitins.topicos1.application.Result;
 import br.unitins.topicos1.dto.MunicipioDTO;
@@ -42,7 +43,6 @@ public class MunicipioResource {
 
     @POST
     public Response insert(MunicipioDTO dto) {
-        // Gera excessão
         try {
             MunicipioResponseDTO municipio = municipioService.create(dto);
             return Response.status(Status.CREATED).entity(municipio).build();
@@ -61,10 +61,10 @@ public class MunicipioResource {
         } catch(ConstraintViolationException e) {
             Result result = new Result(e.getConstraintViolations());
             return Response.status(Status.NOT_FOUND).entity(result).build();
-        }   
+        }      
     }
 
-    @DELETE
+    @Delete
     @Path("/{id}")
     public Response delete(@PathParam("id") Long id) {
         municipioService.delete(id);
