@@ -2,24 +2,15 @@ package br.unitins.topicos1.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
-public class Pessoa extends PanacheEntity {
-
-    private String cpf;
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Pessoa extends DefaultEntity {
 
     @Column(length = 60)
     private String nome;
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
 
     public String getNome() {
         return nome;
