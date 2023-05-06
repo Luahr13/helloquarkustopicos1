@@ -18,3 +18,14 @@ insert into estado (nome, sigla) values( 'Pará', 'PA');
 
 insert into municipio (nome, id_estado) values( 'Palmas', 1);
 insert into municipio (nome, id_estado) values( 'Paraiso do Tocantins', 1);
+
+--insert into usuario(login, senha, id_pessoa_fisica) values ("marco", "123", 1);
+--insert into usuario(login, senha, id_pessoa_fisica) values ("fred", "123", 2);
+
+
+insert into usuario (login, senha) values('marco', '123');
+insert into usuario (login, senha, id_pessoa_fisica) values('fredson', '123', 2);
+
+insert into perfis(id_usuario, perfil) values(1, 'Admin');
+insert into perfis(id_usuario, perfil) values(1, 'User');
+insert into perfis(id_usuario, perfil) values(2, 'User');

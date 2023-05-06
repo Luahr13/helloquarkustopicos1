@@ -1,13 +1,15 @@
 package br.unitins.topicos1.model;
 
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.Entity;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
 public class PessoaFisica extends Pessoa {
-    
+
     private String cpf;
+
+    private String email;
 
     private Sexo sexo;
 
@@ -26,4 +28,13 @@ public class PessoaFisica extends Pessoa {
     public void setSexo(Sexo sexo) {
         this.sexo = sexo;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 }

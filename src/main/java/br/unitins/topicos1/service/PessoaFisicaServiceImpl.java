@@ -4,20 +4,18 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.transaction.Transactional;
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
-import javax.validation.Valid;
-import javax.validation.Validator;
-import javax.ws.rs.NotFoundException;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.Validator;
+import jakarta.ws.rs.NotFoundException;
 
 import br.unitins.topicos1.dto.PessoaFisicaDTO;
 import br.unitins.topicos1.dto.PessoaFisicaResponseDTO;
 import br.unitins.topicos1.model.PessoaFisica;
 import br.unitins.topicos1.model.Sexo;
-import br.unitins.topicos1.repository.EstadoRepository;
 import br.unitins.topicos1.repository.PessoaFisicaRepository;
 
 @ApplicationScoped
@@ -49,9 +47,9 @@ public class PessoaFisicaServiceImpl implements PessoaFisicaService {
         validar(pessoaFisicaDTO);
 
         PessoaFisica entity = new PessoaFisica();
-        entity.setCpf(pessoaFisicaDTO.getCpf());
-        entity.setNome(pessoaFisicaDTO.getNome());
-        entity.setSexo(Sexo.valueOf(pessoaFisicaDTO.getSexo()));
+        entity.setCpf(pessoaFisicaDTO.cpf());
+        entity.setNome(pessoaFisicaDTO.nome());
+        entity.setSexo(Sexo.valueOf(pessoaFisicaDTO.sexo()));
 
         pessoaFisicaRepository.persist(entity);
 
@@ -64,9 +62,9 @@ public class PessoaFisicaServiceImpl implements PessoaFisicaService {
         validar(pessoaFisicaDTO);
    
         PessoaFisica entity = pessoaFisicaRepository.findById(id);
-        entity.setCpf(pessoaFisicaDTO.getCpf());
-        entity.setNome(pessoaFisicaDTO.getNome());
-        entity.setSexo(Sexo.valueOf(pessoaFisicaDTO.getSexo()));
+        entity.setCpf(pessoaFisicaDTO.cpf());
+        entity.setNome(pessoaFisicaDTO.nome());
+        entity.setSexo(Sexo.valueOf(pessoaFisicaDTO.sexo()));
 
         return new PessoaFisicaResponseDTO(entity);
     }
