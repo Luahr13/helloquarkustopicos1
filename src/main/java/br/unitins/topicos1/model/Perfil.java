@@ -4,9 +4,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum Perfil {
-    ADMIN(2, "Administrador"),
-    USER(1, "Usuario");
-
+    ADMIN(1, "Admin"),
+    USER(2, "User");
 
     private int id;
     private String label;
@@ -34,5 +33,6 @@ public enum Perfil {
         throw new IllegalArgumentException("Id inválido:" + id);
     }
 
+    
     
 }

@@ -1,0 +1,15 @@
+2023-05-27 09:54:40,023 luahr-pc helloquarkustopicos1-dev.jar[16252] WARN  [org.jbo.res.res.i18n] (Quarkus Main Thread) RESTEASY002195: The following sub-resource methods and sub-resource locators have the same path, [/municipios/{id}].  The paths should be unique.  [br.unitins.topicos1.resource.MunicipioResource.update, br.unitins.topicos1.resource.MunicipioResource.findById, br.unitins.topicos1.resource.MunicipioResource.delete]
+2023-05-27 09:54:40,245 luahr-pc helloquarkustopicos1-dev.jar[16252] INFO  [org.hib.too.sch.int.exe.GenerationTargetToDatabase] (JPA Startup Thread) HHH000476: Executing script 'file:/C:/Users/Luahr/Documents/GitHub/helloquarkustopicos1/target/classes/import.sql'
+2023-05-27 09:54:40,265 luahr-pc helloquarkustopicos1-dev.jar[16252] INFO  [io.quarkus] (Quarkus Main Thread) helloquarkustopicos1 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.0.2.Final) started in 0.789s. Listening on: http://localhost:8080
+2023-05-27 09:54:40,268 luahr-pc helloquarkustopicos1-dev.jar[16252] INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2023-05-27 09:54:40,270 luahr-pc helloquarkustopicos1-dev.jar[16252] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, hibernate-orm, hibernate-orm-panache, hibernate-validator, jdbc-postgresql, narayana-jta, reactive-routes, resteasy, resteasy-jackson, security, smallrye-context-propagation, smallrye-jwt, smallrye-openapi, swagger-ui, vertx]
+2023-05-27 09:54:40,274 luahr-pc helloquarkustopicos1-dev.jar[16252] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Live reload total time: 0.937s 
+2023-05-27 09:54:40,287 luahr-pc helloquarkustopicos1-dev.jar[16252] INFO  [br.uni.top.res.MunicipioResource] (executor-thread-1) Buscando todos os municipios.
+2023-05-27 09:54:40,289 luahr-pc helloquarkustopicos1-dev.jar[16252] DEBUG [br.uni.top.res.MunicipioResource] (executor-thread-1) ERRO no debug
+2023-05-27 09:54:40,880 luahr-pc helloquarkustopicos1-dev.jar[16252] INFO  [br.uni.top.res.MunicipioResource] (executor-thread-1) Buscando todos os municipios.
+2023-05-27 09:54:40,881 luahr-pc helloquarkustopicos1-dev.jar[16252] DEBUG [br.uni.top.res.MunicipioResource] (executor-thread-1) ERRO no debug
+2023-05-27 09:54:41,488 luahr-pc helloquarkustopicos1-dev.jar[16252] INFO  [br.uni.top.res.MunicipioResource] (executor-thread-1) Buscando todos os municipios.
+2023-05-27 09:54:41,489 luahr-pc helloquarkustopicos1-dev.jar[16252] DEBUG [br.uni.top.res.MunicipioResource] (executor-thread-1) ERRO no debug
+2023-05-27 09:56:17,305 luahr-pc helloquarkustopicos1-dev.jar[16252] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) File change detected: C:\Users\Luahr\Documents\GitHub\helloquarkustopicos1\src\main\resources\application.properties
+2023-05-27 09:56:17,309 luahr-pc helloquarkustopicos1-dev.jar[16252] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Restarting quarkus due to changes in application.properties.
+2023-05-27 09:56:17,333 luahr-pc helloquarkustopicos1-dev.jar[16252] INFO  [io.quarkus] (Quarkus Main Thread) helloquarkustopicos1 stopped in 0.022s

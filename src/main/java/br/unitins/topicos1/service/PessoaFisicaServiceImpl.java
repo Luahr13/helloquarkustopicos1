@@ -9,6 +9,7 @@ import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.Valid;
 import jakarta.validation.Validator;
 import jakarta.ws.rs.NotFoundException;
 
@@ -16,6 +17,7 @@ import br.unitins.topicos1.dto.PessoaFisicaDTO;
 import br.unitins.topicos1.dto.PessoaFisicaResponseDTO;
 import br.unitins.topicos1.model.PessoaFisica;
 import br.unitins.topicos1.model.Sexo;
+import br.unitins.topicos1.repository.EstadoRepository;
 import br.unitins.topicos1.repository.PessoaFisicaRepository;
 
 @ApplicationScoped

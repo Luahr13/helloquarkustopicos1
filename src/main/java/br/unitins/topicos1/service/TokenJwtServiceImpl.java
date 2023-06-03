@@ -10,7 +10,7 @@ import io.smallrye.jwt.build.Jwt;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class TokenJwtServiceImpl implements TokenJwtService{
+public class TokenJwtServiceImpl implements TokenJwtService {
 
     private static final Duration EXPIRATION_TIME = Duration.ofHours(24);
 
@@ -20,14 +20,15 @@ public class TokenJwtServiceImpl implements TokenJwtService{
         Instant expiryDate = now.plus(EXPIRATION_TIME);
 
         Set<String> roles = usuario.getPerfis()
-                                    .stream().map(p -> p.getLabel())
-                                    .collect(Collectors.toSet());
-        
+                .stream().map(p -> p.getLabel())
+                .collect(Collectors.toSet());
+
         return Jwt.issuer("unitins-jwt")
-                    .subject(usuario.getLogin())
-                    .groups(roles)
-                    .expiresAt(expiryDate)
-                    .sign();
+            .subject(usuario.getLogin())
+            .groups(roles)
+            .expiresAt(expiryDate)
+            .sign();
+
     }
     
 }
